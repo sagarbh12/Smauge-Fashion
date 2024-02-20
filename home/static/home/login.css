@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+    /* ### For Login ### */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.login-img{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.2;
+}
+.form-cover{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px gray;
+    width: 900px;
+    height: 80vh;
+}
+.signin{
+    margin: 0 25% 30px 0;
+    font-size: 40px;
+}
+.login-with{
+    margin-bottom: 4%;
+}
+.login-with img{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+.loginwith-text{
+    border: 2px solid gray;
+    border-radius: 3%;
+    padding: 20px 20px 10px 20px;
+    text-decoration: none;
+    margin-right: 15px;
+    color: black;
+    width: 100%;
+    display: flex-row;
+    justify-content: center;
+    text-align: center;
+}
+.text-field {
+    margin: 20px;
+}
+
+#username, #password {
+    border-style: none;
+    border: 2px solid gray;
+    border-radius: 4px;
+    width: 320px;
+    height: 40px;
+    padding-left: 20px;
+    font-size: 17px;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+    /* border: 2px solid red; */
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.text-icon{
+    display: flex;
+}
+.submit-btn{
+    margin-bottom: 12px;
+    background-color: #DA0037;
+    width: 150px;
+    height: 40px;
+    color: white;
+    border: 1px solid #DA0037;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.login-last{
+    display: flex;
+    font-size: 16px;
+    gap: 30px;
+}
+
+
+/* ### For Register Account ### */
