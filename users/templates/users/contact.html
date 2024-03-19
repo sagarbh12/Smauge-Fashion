@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <link rel="stylesheet" href="{% static 'home/all.css' %}">
+
+</head>
+<body>
+    
+    <div class="form-wrapper">
+        <img class="login2-img" src="{% static 'home/images/login2.webp' %}" alt="icon"/>
+
+        {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+        {% endif %}
+
+        <form class="form-cover" id="form-cover" method="post">    <!-- ### Form Start ### -->
+            {% csrf_token %}
+            <!-- {{ form.as_p }} -->
+
+            <div class="contact-txt"> <b>Contact Us 𝌕 </b></div>
+
+
+        <div class="text-field">
+            
+            <diV>
+                <label for="fullname"><br>
+                    <div class="text-icon">
+                        <div><img class="icon" src="{% static 'home/images/icons/user.png' %}" alt="fullname-icon"/></div>
+                        <div><input type="fullname" id="fullname" name="fullname" autocomplete="off" placeholder="Fullname" value="{{fullname}}" required></div>
+                    </div>
+                </label>
+            </div>
+`
+            <diV>
+                <label for="email"><br>
+                    <div class="text-icon">
+                        <div><img class="icon" src="{% static 'home/images/icons/email.png' %}" alt="email-icon"/></div>
+                        <div><input type="email" id="email" name="email" autocomplete="off" placeholder="Email" value="{{email}}"></div>
+                    </div>
+                </label>
+            </div>
+
+            <diV>
+                <label for="message"><br>
+                    <div class="text-icon">
+                        <div><img class="icon" src="{% static 'home/images/icons/user.png' %}" alt="message-icon"/></div>
+                        <div><textarea type="message" id="mess" name="message" autocomplete="off" placeholder="Write Something ..." value="{{mess}}" required></textarea></div>
+                    </div>
+                </label>
+            </div>
+
+        </div>
+        <button type="submit" class="submit-btn"> Send </button>
+
+         </form>    <!-- ### Form End ### -->
+</div>
+
+<script src="script.js"></script>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function(){
+        emailjs.init("vX4gf54YYVlwNMPqn"); 
+
+        document.getElementById('form-cover').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('service_cs24cto', 'template_ay7sc18', this)
+                .then(function(response) {
+                    console.log('Email sent successfully:', response);
+                    alert('Message sent successfully!');
+                }, function(error) {
+                    console.error('Email send failed:', error);
+                    alert('Message send failed. Please try again later.');
+                });
+        });
+    })();
+</script>
+
+
+</body>
+</html>

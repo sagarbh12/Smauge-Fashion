@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+    /* ### For Contact ### */
+
+    .messages {
+        position: absolute;
+        top: 10%;
+        border: 3px solid whitesmoke;
+        border-radius: 10px;
+        padding: 15px 25px;
+        background-color: #DA0037;
+        color: white;
+        animation: showAndHide 5s ease-in-out forwards;
+        z-index: 1;
+      }
+      
+      @keyframes showAndHide {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          30% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          70% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          100% {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+      }
+      
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.login2-img{
+    position: fixed;
+    top: 20;
+    left: 0;
+    margin-right: 90%;
+    width: 60%;
+    height: 85%;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.form-cover{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px gray;
+    width: 900px;
+    height: 80vh;
+}
+
+.contact-txt{
+    margin: 0 0 10px 0;
+    font-size: 40px;
+    /* color: #DA0037; */
+}
+.text-field {
+    margin: 20px;
+}
+
+#email, #fullname, #mess {
+    border-style: none;
+    border: 2px solid gray;
+    border-radius: 4px;
+    width: 400px;
+    height: 40px;
+    padding: 0px 20px;
+    font-size: 17px;
+}
+
+#mess{
+    padding: 10px 20px;
+    height: 100px;
+    text-align: justify;
+    font-size: 16px;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+    /* border: 2px solid red; */
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.text-icon{
+    display: flex;
+}
+
+.submit-btn{
+    margin-bottom: 12px;
+    background-color: #DA0037;
+    width: 150px;
+    height: 40px;
+    color: white;
+    border: 1px solid #DA0037;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+
+
