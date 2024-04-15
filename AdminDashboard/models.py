@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+<<<<<<< HEAD
 
 #   #### Product Model ####
 class productsModel(models.Model):
@@ -8,3 +9,5 @@ class productsModel(models.Model):
     Description = models.TextField()
     Image = models.ImageField(upload_to='images/')
     Price = models.TextField()
+=======
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154

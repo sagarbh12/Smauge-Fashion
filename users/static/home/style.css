@@ -83,6 +83,7 @@ header .navbar{
     display: block;
 }
 
+<<<<<<< HEAD
 .basket{
     height: 30px;
     width: 30px;
@@ -92,6 +93,11 @@ header .navbar{
     height: 25px;
     width: auto;
     margin-left: -26px;
+=======
+.basket, .user-logo{
+    height: 30px;
+    width: 30px;
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
 }
 
     /* ### Search ### */
@@ -103,11 +109,18 @@ header .navbar{
     transition: 0.5s;
     box-shadow: 0 0 0 3px gray;
     overflow: hidden;
+<<<<<<< HEAD
     margin-left: 50px;
 }
 
 .search.active {
     width: 200px; 
+=======
+}
+
+.search.active {
+    width: 200px; /* Adjusted width */
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
 }
 
 .search.active .input {
@@ -150,9 +163,15 @@ header .navbar{
 
 .search .input {
     position: absolute;
+<<<<<<< HEAD
     width: 100%; 
     height: 30px;
     left: 0;
+=======
+    width: 100%; /* Adjusted width */
+    height: 30px;
+    left: 0; /* Adjusted left value */
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
     display: flex;
     justify-content: center;
     align-items: center;
@@ -234,10 +253,18 @@ section{
         /* ###  HOME ###*/
 .profile-img{
     position: relative;
+<<<<<<< HEAD
     padding-top: 70px;
     width: 40vw;
     height: 100vh;
     margin-left: 750px;
+=======
+    padding-top: 40px;
+    width: 50vw;
+    height: 100vh;
+    margin-left: 750px;
+    background-color: transparent;
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
 }
 
 .container{
@@ -288,7 +315,11 @@ section{
     opacity: 0.7;
 }
 
+<<<<<<< HEAD
 /* Slide2r CSS */
+=======
+/* Slider CSS */
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
   .slide {
     width: 100%;
     height: 100vh;
@@ -389,6 +420,8 @@ section{
 }
 
     /*### Page Products ### */
+<<<<<<< HEAD
+<<<<<<<< HEAD:users/static/home/style.css
     .lan-products {
         display: flex;
         flex-wrap: wrap;
@@ -452,6 +485,74 @@ section{
         font-weight: 700;
         font-size: 20px;
       }
+========
+=======
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
+.lan-products{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.lan-images{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    border:1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 20px;
+    position: relative;
+    transition: filter 0.3s; 
+}
+
+.buy_btn{
+    background-color: #DA0037;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    border:none;
+    padding: 10px 15px;
+    position: absolute;
+    bottom: 20px;
+    right: 100px;
+    visibility: hidden;
+    z-index: 1; /* Blur Content bhanda mathi aaounako laagi */
+    transition: filter 0.3s;
+
+}
+
+.lan-img{
+    width:150px;
+    height:auto;
+}
+
+.lan-text{
+    font-size: 16px;
+}
+.lan-text2{
+    font-size: 18px;
+    padding: 15px 0px 10px 0px;
+}
+.lan-price{
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+.lan-text3{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+<<<<<<< HEAD
+>>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154:AdminDashboard/static/home/style.css
+=======
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
 
     /* ### Short Discription ### */
 .short-disc{
@@ -467,6 +568,20 @@ section{
     font-size: 20px;
 }
 
+<<<<<<< HEAD
+=======
+    /*### Landing Page Analysis ###*/
+/* .lan-analysis {
+    display: grid;
+    margin-bottom: -100px;
+}
+
+.lan-analysis img {
+    width: 100%;
+    height: 100%;
+} */
+
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
     /* ### Frequently Asked Questions ###*/
 .faq{
     display: flex;
@@ -496,6 +611,7 @@ section{
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); */
 }
 
+<<<<<<< HEAD
 .testi-container{
     height: 90vh;
     width: 100%;
@@ -565,6 +681,9 @@ section{
     }
     
 }
+=======
+
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
 
         /* Footer */
 #footer{
@@ -608,7 +727,11 @@ section{
     cursor: pointer;
     font-weight: 600;
 }
+<<<<<<< HEAD
 .con:hover:hover{
+=======
+.con:hover, .footer-bio:hover{
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
     transform: scale(1.05);
     font-weight: lighter;
     color: #DA0037;
@@ -658,7 +781,10 @@ section{
 
 .copy{
     margin: 20px 0px;
+<<<<<<< HEAD
     background-color: whitesmoke;
+=======
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
 }
 
 .messages {
@@ -691,10 +817,18 @@ section{
     }
 }
 
+<<<<<<< HEAD
+=======
+/* Red color for error messages */
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
 .message.error {
     color: #DA0037;
 }
 
+<<<<<<< HEAD
+=======
+/* Green color for success messages */
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
 .message.success {
     color: #008000; 
 }

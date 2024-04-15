@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
     /* ### For Contact ### */
 
     .messages {
@@ -36,10 +49,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
+=======
+    margin-top: 5%;
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
 }
 
 .login2-img{
     position: fixed;
+<<<<<<< HEAD
+=======
+    top: 20;
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
     left: 0;
     margin-right: 90%;
     width: 60%;
@@ -109,4 +130,7 @@
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154

@@ -138,3 +138,16 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
+<<<<<<< HEAD
+=======
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = 'users.CustomUser'
+#Email config
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'np03cs4a210066@heraldcollege.edu.np'
+EMAIL_HOST_PASSWORD = 'lyay mkrr mrzi cprf'
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154

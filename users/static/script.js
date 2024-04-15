@@ -57,3 +57,69 @@ function handleSearchInput() {
     }
     // Add more conditions for different sections or pages as needed
 }
+<<<<<<< HEAD
+=======
+
+// Slider Home Page Image
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+let currentSlide = 0;
+
+function showSlide(slideIndex) {
+    slides.forEach(s => s.classList.remove('active'));
+    slides[slideIndex].classList.add('active');
+    currentSlide = slideIndex;
+}
+
+function showNextSlide() {
+    showSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
+}
+
+function showPreviousSlide() {
+    showSlide(currentSlide === 0 ? slides.length - 1 : currentSlide - 1);
+}
+
+prevBtn.addEventListener('click', showPreviousSlide);
+nextBtn.addEventListener('click', showNextSlide);
+
+function startSlideshow() {
+    showNextSlide();
+    setTimeout(startSlideshow, 4000); // Adjust the delay as needed
+}
+startSlideshow();
+
+
+//### Landing Products ###
+const buyBtns = document.getElementsByClassName('buy_btn');
+const lan_images = document.getElementsByClassName("lan-images");
+const lan_text=document.getElementsByClassName("lan-text");
+const lan_text2=document.getElementsByClassName("lan-text2");
+const lan_price=document.getElementsByClassName("lan-price");
+const lan_img=document.getElementsByClassName("lan-img");
+
+for (let i = 0; i < lan_images.length; i++) {
+    lan_images[i].addEventListener("mouseover", (e) => {
+        buyBtns[i].style.visibility = 'visible';
+        lan_text[i].style.filter = 'blur(1px)';
+        lan_text2[i].style.filter = 'blur(1px)';
+        lan_img[i].style.filter = 'blur(1px)';
+        lan_price[i].style.filter = 'blur(1px)';
+
+    });
+
+    lan_images[i].addEventListener("mouseout", (e) => {
+        buyBtns[i].style.visibility = 'hidden';
+        lan_text[i].style.filter = 'blur(0px)';
+        lan_text2[i].style.filter = 'blur(0px)';
+        lan_img[i].style.filter = 'blur(0px)';
+        lan_price[i].style.filter = 'blur(0px)';
+
+    });
+}
+
+
+
+
+  
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154

@@ -10,8 +10,11 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from google.oauth2 import id_token
 from google.auth.transport import requests
+<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
 from AdminDashboard.models import productsModel
+=======
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
 
 
 def LandingPage(request):
@@ -29,7 +32,11 @@ def Blog(request):
 def Contact(request):
     return render(request, "users/contact.html")
 
+<<<<<<< HEAD
 def Refund(request):
+=======
+def RefundPolicy(request):
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
     return render(request, "users/RefundPolicy.html")
 
 def PrivacyPolicy(request):
@@ -39,6 +46,7 @@ def faq(request):
     return render(request, "users/faq.html")
 
 def Products(request):
+<<<<<<< HEAD
     # Fetch all existing products from the database
     products = productsModel.objects.all()
     return render(request, "users/products.html",{'products': products})
@@ -47,6 +55,10 @@ def Products(request):
 def Testimonial(request):
     return render(request, "users/testimonial.html")
 
+=======
+    return render(request, "users/products.html")
+
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
 
 def Signup(request):
     context = {
@@ -132,6 +144,7 @@ def Signup(request):
 
 
 def Login(request):
+<<<<<<< HEAD
     context = {'username': ''}
     if request.method == 'POST':
         username = request.POST['username']
@@ -155,6 +168,31 @@ def Login(request):
         else:
             messages.error(request, "Invalid username or password.")
     return render(request, 'users/login.html', context)
+=======
+    context={ 'username':''
+
+    }
+    if request.method == 'POST':
+        username=request.POST['username']
+        pass1=request.POST['pass1']
+
+        context={ 'username':username
+
+            }
+
+        user= authenticate(username=username, password=pass1)
+        if user is not None and user.is_verified:  # Check if user is verified
+            login(request, user)
+            fullname = user.full_name
+            messages.success(request, "Successfully logged in!")
+            return render(request, 'users/index.html', {'fullname': fullname})
+        elif user is not None and not user.is_verified:
+            messages.error(request, "Your email is not verified yet. Please check your email for verification.")
+        else:
+            messages.error(request, "Invalid username or password.")
+    return render(request, 'users/login.html',context)
+
+>>>>>>> 778d59a5e089a051b0abcb73d9fb62538c39e154
 
 
 def VerifyEmail(request, token):
