@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+    /* ### For Login ### */
+
+    .messages {
+        position: absolute;
+        top: 10%;
+        border: 3px solid whitesmoke;
+        border-radius: 10px;
+        padding: 15px 25px;
+        background-color: white;
+        animation: showAndHide 5s ease-in-out forwards;
+        z-index: 1;
+    }
+    
+    @keyframes showAndHide {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        30% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        70% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    }
+    
+    /* Red color for error messages */
+    .message.error {
+        color: #DA0037;
+    }
+    
+    /* Green color for success messages */
+    .message.success {
+        color: #008000; 
+    }
+    
+      
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.login-img{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.2;
+}
+.form-cover{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px gray;
+    width: 900px;
+    height: 80vh;
+}
+.signin{
+    margin: 0 25% 30px 0;
+    font-size: 40px;
+}
+.login-with{
+    margin-bottom: 1%;
+    width: 40%;
+    border: 2px solid gray;
+    color: #DA0037;
+    font-size: larger;
+}
+
+.or-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.or-line {
+    flex: 1;
+    height: 1px;
+    background-color: #000;
+}
+
+.or-text {
+    padding: 0 10px;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* .login-with img{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+} */
+
+.loginwith-text{
+    border: 2px solid gray;
+    border-radius: 3%;
+    padding: 20px 20px 10px 20px;
+    text-decoration: none;
+    margin-right: 15px;
+    color: black;
+    width: 100%;
+    display: flex-row;
+    justify-content: center;
+    text-align: center;
+}
+
+.text-field {
+    margin: 20px;
+}
+.field-gap{
+    margin-bottom: 10px;
+}
+
+#username, #password, #email, #fullname, #contact {
+    border-style: none;
+    border: 2px solid gray;
+    border-radius: 4px;
+    width: 320px;
+    height: 40px;
+    padding-left: 20px;
+    font-size: 17px;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+    /* border: 2px solid red; */
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.text-icon{
+    display: flex;
+}
+
+.submit-btn{
+    margin-bottom: 12px;
+    background-color: #DA0037;
+    width: 150px;
+    height: 40px;
+    color: white;
+    border: 1px solid #DA0037;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.login-last{
+    display: flex;
+    font-size: 16px;
+    gap: 30px;
+}
+.eye{
+    width: 20px; 
+    height: 20px; 
+    cursor: pointer; 
+    margin-left: 5px; 
+    opacity: 0.5; 
+    transition: opacity 0.3s ease; 
+}
+.eye:hover {
+    opacity: 1; 
+}
+#eye-btn{
+    height: 20px;
+    width: 20px;
+}
+
+/* ### For Register Account ### */
+.signup{
+    margin: 0 0 10px 0;
+    font-size: 40px;
+    /* color: #DA0037; */
+}
+
+.login2-img{
+    position: fixed;
+    top: 20;
+    left: 0;
+    margin-right: 90%;
+    width: 60%;
+    height: 85%;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+/* #### Forgot Password #### */
+.forgot-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inside-container{
+    margin-top: 2%;
+    /* padding: 150px 0px 150px 0px; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 10px gray;
+    width: 90%;
+    height: 90vh;
+}
+.inside-container h3{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.fogot-username{
+    font-size: 20px;
+}
+.inside-container button{
+    margin-top: 10px;
+    width: 200px;
+    height: 40px;
+}
+
+.fogot-pass{
+    font-size: 20px;
+    margin-right: 120px;
+}
+

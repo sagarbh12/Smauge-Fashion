@@ -1,0 +1,186 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+        <style>
+        .same {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .whole-about {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        </style>
+
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+
+</head>
+<body>
+
+    <header id="header">
+        <nav class="navbar">
+          <a class="logo" href="#logo">Smauge</a>
+          <ul>
+            <li><a href="/" class="active">Home</a></li>
+    
+            <!--### The dropdown container ###-->
+            <div class="dropdown">
+              <li>
+                <p class="dropbtn">Pages <i class="fas fa-caret-down"></i></p>
+              </li>
+              <div class="dropdown-content">
+                <ul>
+                  <li><a href="/blog">Blog</a></li>
+                  <li><a href="/about">About</a></li>
+                  <li><a href="/faq">FAQ</a></li>
+                  <li><a href="/refund">Refund</a></li>
+                  <li><a href="/products">Products</a></li>
+    
+                </ul>
+              </div>
+            </div>
+    
+            <li><a href="/testimonial">Testimonial</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+    
+          <div class="header-logo">
+    
+            <div class="search">
+              <div class="icon"></div>
+              <div class="input">
+                <input type="text" name="input" id="mysearch" placeholder="Search" required autocomplete="off"
+                  oninput="handleSearchInput()" />
+              </div>
+              <span class="clear" onclick="clearSearch()"></span>
+            </div>
+    
+            <div>
+              <a href="{% url 'login' %}"><img src={% static 'home/images/icons/user-profile.png' %} class="user-logo"
+                  alt="user" /></a>
+            </div>
+    
+            <div>
+              <img src={% static "home/images/icons/basket.png" %} class="basket" alt="Cart" />
+            </div>
+    
+          </div>
+        </nav>
+      </header>
+    
+      <br><br><br><br><br>
+    <h2 class="same">Welcome to the Smauge Fashion Hub Blog!</h2>
+    <div class="whole-about">
+
+    <p>
+        Greetings, fashionistas! We are thrilled to welcome you to the Smauge Fashion Hub blog, your go-to destination for the latest trends, 
+        style tips, and a glimpse into the vibrant world of fashion. This blog is not just about clothing; it's about embracing a lifestyle 
+        where fashion is a celebration of individuality, self-expression, and confidence.
+        
+          <h3 class="same">What to Expect:</h3>
+          Trendspotting: Dive into the world of fashion as we explore and analyze the latest trends gracing the runways and streets. Stay ahead 
+        of the curve and discover how to incorporate these trends into your personal style.
+
+        
+        <h3 class="same">Style Guides:</h3>
+        Unleash your inner fashionista with our style guides. Whether you're revamping your wardrobe or experimenting with new 
+        looks, our guides will provide inspiration and practical tips to elevate your style game.
+        
+        <h3 class="same">Behind the Scenes:</h3>
+        Get an exclusive peek behind the curtain as we share the stories of the designers, artists, and influencers shaping 
+        the fashion landscape. Learn about the creative process and the inspirations that drive the industry forward.
+        
+       <h3 class="same">Sustainability Spotlight:
+        Join us on our journey towards a more sustainable and eco-conscious fashion world. Explore our commitment to 
+        ethical practices and discover brands that share our vision for a greener future.
+        
+        <h3 class="same">Your Fashion Journey Starts Here</h3>
+        Smauge Fashion Hub is not just a store; it's a community, and this blog is an extension of that community. We invite you to join the 
+        conversation, share your thoughts, and connect with fellow fashion enthusiasts. Let's embark on a style journey together, where every 
+        outfit tells a story, and every accessory is a statement.
+        
+        <h3 class="same">Stay Connected</h3>
+        Don't miss out on the latest updates, style tips, and exclusive offers. Subscribe to our newsletter, follow us on social media, and 
+        become part of the Smauge Fashion Hub family.
+        
+        Thank you for stepping into the world of Smauge Fashion Hub. Get ready to be inspired, informed, and immersed in the world of fashion.
+        
+        Stay fabulous!
+    </p>
+    </div>
+
+
+    <br> <br>
+    <footer id="footer" role="contentinfo">
+      <div class="footer-wrapper">
+        <div class="con-container">
+          <p class="logo2">Smauge.</p>
+          <p class="footer-bio">Discover a world of chic and sustainable fashion at Smauge Fashion Hub. We curate the
+            latest trends and timeless pieces to inspire confidence and celebrate your unique style. Join us on a journey
+            where fashion meets passion, and every outfit tells a story. Welcome to Smauge - where style is more than
+            clothing; it's a statement.</p><br>
+  
+          <p style="font-size: 25px;">Contact</p><br>
+          <p class="con"><img class="footer-icon1" src={% static "home/images/icons/call.png" %} /> +977 9873748380</p>
+          <p class="con"><img class="footer-icon1" src={% static "home/images/icons/email.png" %} /> smauge@gmail.com</p>
+          <p class="con"><img class="footer-icon1" src={% static "home/images/icons/location.png" %} /> Chakrapath,
+            Kathmandu, Nepal</p>
+        </div>
+  
+        <div class="useful">
+          <p style="font-size: 25px;">Useful Links</p><br>
+          <p><a href="/">Home</a></p>
+          <p><a href="/about">About</a></p>
+          <p><a href="/blog">Blog</a></p>
+          <p><a href="/faq">FAQ</a></p>
+          <p><a href="/products">Products</a></p>
+          <p><a href="/contact">Contact Us</a></p>
+          <p><a href="/refund">Return Policy</a></p>
+        </div>
+  
+        <div class="social">
+          <p style="font-size: 25px;">Connect with us</p>
+          <a href="www.facebook.com"><img class="footer-icon" src={% static "home/images/icons/facebook.png" %} /></a>
+          <a href="www.instagram.com"><img class="footer-icon" src={% static "home/images/icons/instagram.png" %} /></a>
+          <a href="www.youtube.com"><img class="footer-icon" src={% static "home/images/icons/youtube.png" %} /></a>
+          <a href="www.tiktok.com"><img class="footer-icon" src={% static "home/images/icons/tik-tok.png" %} /></a>
+  
+          <p>
+          <p style="font-size: 25px;">Payment Methods</p>
+          <img class="footer-icon3" src={% static "home/images/icons/esewa.webp" %} />
+          </p>
+          <p style="font-size: 25px;">Happy Shopping</p>
+  
+        </div>
+      </div>
+  
+  
+    </footer>
+
+  <p class="copy">
+    <center>
+      Copyright &copy;
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      All rights reserved | Smauge Fashion Hub  <a href="/PrivacyPolicy"><b>Privacy Policy</b></a>
+    </center>
+  </p><br>
+
+  <script src={% static "script.js" %}></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smauge Fashion Hub</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+  
+  </head>
+
+  <body>
+    <header id="header">
+      <nav class="navbar">
+        <a class="logo" href="#logo">Smauge</a>
+        <ul>
+          <li><a href="" class="active">Home</a></li>
+
+          <!--### The dropdown container ###-->
+          <div class="dropdown">
+            <li>
+              <p class="dropbtn">Pages <i class="fas fa-caret-down"></i></p>
+            </li>
+            <div class="dropdown-content">
+              <ul>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/RefundPolicy">Refund</a></li>
+                <li><a href="/products">Products</a></li>
+
+              </ul>
+            </div>
+          </div>
+
+          <li><a href="#testimonial">Testimonial</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+
+        <div class="header-logo">
+
+          <div class="search">
+            <div class="icon"></div>
+            <div class="input">
+              <input type="text" name="input" id="mysearch" placeholder="Search" required autocomplete="off"
+                oninput="handleSearchInput()" />
+            </div>
+            <span class="clear" onclick="clearSearch()"></span>
+          
+          </div>
+          <div>
+            <a href="{% url 'login' %}"><img src={% static 'home/images/icons/user-profile.png' %} class="user-logo"
+                alt="user" /></a>
+          </div>
+  
+          <div>
+            <img src={% static "home/images/icons/basket.png" %} class="basket" alt="Cart" />
+          </div>
+  
+        </div>
+      </nav>
+    </header>
+
+    <section id="home">
+      <div class="container">
+        <div class="slide">
+          <div class="blk">
+            <p class="text1">
+              Smauge Fashion<br />
+              Hub
+            </p>
+            <p class="text2">
+              Indulge in elegance. Embrace tradition. Experience Smauge Clothing
+              Collection.
+            </p>
+            <a href="login"><p class="btn">Shop Now</p></a>
+          </div>
+          <div class="blk">
+            <img src={% static "home/images/clothes/jacket1.jpg"%} class="profile-img" id="profile-img" alt="Profile" 
+            />
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="blk">
+            <p class="text1">
+              Sale 25% Off <br />
+              On Everything
+            </p>
+            <p class="text2">
+              Indulge in elegance. Embrace tradition. Experience Smauge Clothing
+              Collection.
+            </p>
+            <a href="login"><p class="btn">Shop Now</p></a>
+          </div>
+          <div class="blk">
+            <img
+              src={% static "home/images/clothes/jacket2.jpg"%}
+              class="profile-img"
+              id="profile-img"
+              alt="Profile"
+            />
+          </div>
+        </div>
+        
+        <img src={% static "home/images/icons/next.png"%} class="prev-btn"/>
+        <img src={% static "home/images/icons/back.png"%} class="next-btn"/>
+      </div>
+      
+    </section>
+    <br><br><br>
+    <div class="dis">
+      <img src={% static "home/images/clothes/jacket13.jpg"%} alt="cloth"/>
+      <div>
+        <p1 class="dis-p1">👉 New Arrivals</p1><br />
+        <p2 class="dis-p2"
+          >Explore the perfect blend of tradition and trend, and shop with
+          confidence for every special occasion. Elevate your style, celebrate
+          your culture, and embrace the allure of our stunning cloth collection.
+          Welcome to a journey where every drape tells a story of sophistication
+          and charm.</p2>
+        <div>
+          <a href="login"><p class="dis-btn">Shop Now</p></a>
+        </div>
+      </div>
+    </div>
+    
+    <h2 class="heads">Feature Products</h2>
+
+    <div class="lan-products">
+      <div class="lan-images">
+        <div>
+          <div class="lan-text">Premium Quality</div>
+          <p class="lan-text2">cloth Name</p>
+          <p class="lan-price">Rs. 5000</p>
+
+          <a href="login"><p class="buy_btn">Buy Now</p></a>
+        </div>
+        <img src={% static "home/images/clothes/jacket18.jpg"%} class="lan-img" alt="cloth"/>
+      </div>
+      <div class="lan-images">
+        <div>
+          <div class="lan-text">Premium Quality</div>
+          <p class="lan-text2">cloth Name</p>
+          <p class="lan-price">Rs. 5000</p>
+
+          <a href="login"><p class="buy_btn">Buy Now</p></a>
+        </div>
+        <img src={% static "home/images/clothes/jacket2.jpg"%} class="lan-img" alt="cloth"/>
+      </div>
+
+      <div class="lan-images">
+        <div>
+          <div class="lan-text">Premium Quality</div>
+          <p class="lan-text2">cloth Name</p>
+          <p class="lan-price">Rs. 5000</p>
+
+          <a href="login"><p class="buy_btn">Buy Now</p></a>
+        </div>
+        <img src={% static "home/images/clothes/jacket3.jpg"%} class="lan-img" alt="cloth"/>
+      </div>
+
+      <div class="lan-images">
+        <div>
+          <div class="lan-text">Premium Quality</div>
+          <p class="lan-text2">cloth Name</p>
+          <p class="lan-price">Rs. 5000</p>
+
+          <a href="login"><p class="buy_btn">Buy Now</p></a>
+        </div>
+        <img src={% static "home/images/clothes/jacket4.jpg"%} class="lan-img" alt="cloth"/>
+      </div>
+
+      <div class="lan-images">
+        <div>
+          <div class="lan-text">Premium Quality</div>
+          <p class="lan-text2">cloth Name</p>
+          <p class="lan-price">Rs. 5000</p>
+
+          <a href="login"><p class="buy_btn">Buy Now</p></a>
+        </div>
+        <img src={% static "home/images/clothes/jacket20.jpg"%} class="lan-img" alt="cloth"/>
+      </div>
+
+      <div class="lan-images">
+        <div>
+          <div class="lan-text">Premium Quality</div>
+          <p class="lan-text2">cloth Name</p>
+          <p class="lan-price">Rs. 5000</p>
+
+          <a href="login"><p class="buy_btn">Buy Now</p></a>
+        </div>
+        <img src={% static "home/images/clothes/jacket6.jpg"%} class="lan-img" alt="cloth"/>
+      </div>
+
+      <div class="lan-images">
+        <div>
+          <div class="lan-text">Premium Quality</div>
+          <p class="lan-text2">cloth Name</p>
+          <p class="lan-price">Rs. 5000</p>
+
+          <a href="login"><p class="buy_btn">Buy Now</p></a>
+        </div>
+        <img src={% static "home/images/clothes/jacket7.jpg"%} class="lan-img" alt="cloth"/>
+      </div>
+
+      <div class="lan-images">
+        <div>
+          <div class="lan-text">Premium Quality</div>
+          <p class="lan-text2">cloth Name</p>
+          <p class="lan-price">Rs. 5000</p>
+
+          <a href="login"><p class="buy_btn">Buy Now</p></a>
+        </div>
+        <img src={% static "home/images/clothes/jacket21.jpg"%} class="lan-img" alt="cloth"/>
+      </div>
+
+      <div class="lan-images">
+        <div>
+          <div class="lan-text">Premium Quality</div>
+          <p class="lan-text2">cloth Name</p>
+          <p class="lan-price">Rs. 5000</p>
+
+          <a href="login"><p class="buy_btn">Buy Now</p></a>
+        </div>
+        <img src={% static "home/images/clothes/jacket9.jpg"%} class="lan-img" alt="cloth"/>
+      </div>
+
+      <div class="lan-images">
+        <div>
+          <div class="lan-text">Premium Quality</div>
+          <p class="lan-text2">cloth Name</p>
+          <p class="lan-price">Rs. 5000</p>
+
+          <a href="login"><p class="buy_btn">Buy Now</p></a>
+        </div>
+        <img src={% static "home/images/clothes/jacket10.jpg"%} class="lan-img" alt="cloth"/>
+      </div>
+
+      <div class="lan-images">
+        <div>
+          <div class="lan-text">Premium Quality</div>
+          <p class="lan-text2">cloth Name</p>
+          <p class="lan-price">Rs. 5000</p>
+
+          <a href="login"><p class="buy_btn">Buy Now</p></a>
+        </div>
+        <img src={% static "home/images/clothes/jacket16.jpg"%} class="lan-img" alt="cloth"/>
+      </div>
+
+      <div class="lan-images">
+        <div>
+          <div class="lan-text">Premium Quality</div>
+          <p class="lan-text2">cloth Name</p>
+          <p class="lan-price">Rs. 5000</p>
+
+          <a href="login"><p class="buy_btn">Buy Now</p></a>
+        </div>
+        <img src={% static "home/images/clothes/jacket12.jpg"%} class="lan-img" alt="cloth"/>
+      </div>
+
+
+
+    </div>
+
+    <div>
+      <a href="#" class="lan-text3">View All Products</a>
+    </div>
+
+    <h2 class="heads">Buy Wide range of clothes</h2>
+    <div class="short-disc">
+      <p class="short-dis">Elevate your style with Smauge Fashion Hub, where passion meets fashion. We are your curated destination for the latest trends, timeless classics, and sustainable style. Our commitment is to inspire confidence and celebrate individuality through a diverse range of carefully selected pieces. Join us in the journey of self-expression, where every outfit is a statement. Welcome to a world where fashion is more than just clothing; it's a lifestyle. </p>
+    </div>
+
+
+
+      <!-- Frequently Asked Questions -->
+    <h2 class="heads" id="faq">Frequently Asked Questions</h2>
+    <div class="faq">
+      <div class="faq-question">
+        <p>1. What is Smauge Fashion Hub?</p></p><br>
+        <p>Smauge Fashion Hub is an online destination that brings together a carefully curated collection of fashion items, ranging from trendy pieces to timeless classics. We aim to inspire confidence through fashion, celebrating individuality and self-expression.</p>
+      </div>
+
+      <div class="faq-question">
+        <p>2. How do I place an order?</p></p><br>
+        <p>Placing an order at Smauge Fashion Hub is easy! Simply browse our online catalog, add your desired items to the cart, and proceed to checkout. Follow the prompts to enter your shipping details and payment information. Once your order is confirmed, you will receive a confirmation email.</p>
+      </div>
+
+      <div class="faq-question">
+        <p>3.  Can I modify or cancel my order after it's placed?</p></p><br>
+        <p>Once an order is confirmed, it enters our processing system quickly to ensure swift delivery. Therefore, modifications or cancellations may not be possible. Please review your order carefully before finalizing the purchase.</p>
+      </div>
+
+      <div class="faq-question">
+        <p>4. What is your return policy?</p></p><br>
+        <p>We want you to be satisfied with your purchase. If for any reason you're not happy with your order, please refer to our Return Policy for detailed information on how to initiate a return or exchange.</p>
+      </div>
+
+      <div class="faq-question">
+        <p>5. Are your products ethically sourced?</p></p><br>
+        <p>Yes, we are committed to ethical sourcing and sustainable practices. Learn more about our dedication to sustainability in our Sustainability section.</p>
+      </div>
+
+      <div class="faq-question">
+        <p>6.  How can I stay updated on new arrivals and promotions?</p><br>
+        Stay in the loop by subscribing to our newsletter and following us on social media. Be the first to know about new arrivals, exclusive promotions, and fashion insights.</p>
+      </div>
+
+    </div>
+    
+    
+        <h2 class="heads">Testimonials</h2>
+        <section class="testi-container">
+          <div class="testimonial swiper-container mySwiper" id="testimonial">
+            <div class="testi-content swiper-wrapper">
+              <div class="slide2 swiper-slide">
+                <img src={% static "home/images/people/per1.avif" %} alt="person" class="person" />
+                <p>
+                  The jackets from Smauge Fashion Hub are a perfect blend of sophistication and comfort, elevating my wardrobe effortlessly. Each piece exudes quality craftsmanship and timeless elegance.
+                </p>
+      
+                <i class='bx bxs-quote-alt-left quote-icon'></i>
+      
+                <div class="details">
+                  <span class="name">Sutter Sing Chapagain</span>
+                  <span class="job">Wear House Owner</span>
+      
+                </div>
+      
+              </div>
+      
+              <div class="slide2 swiper-slide">
+                <img src={% static "home/images/people/per3.avif" %} alt="person" class="person" />
+                <p>
+                  Smauge Fashion Hub's jackets are top-notch in quality and style, making them my ultimate choice for any occasion. I'm always impressed with their durability and fashionable designs.
+                </p>
+      
+                <i class='bx bxs-quote-alt-left quote-icon'></i>
+      
+                <div class="details">
+                  <span class="name">Rahul Devkota</span>
+                  <span class="job">Jacket Nepal Owner</span>
+      
+                </div>
+      
+              </div>
+      
+            </div>
+      
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+      
+          </div>
+      
+        </section>
+
+
+        <br> <br>
+        <footer id="footer" role="contentinfo">
+          <div class="footer-wrapper">
+            <div class="con-container">
+              <p class="logo2">Smauge.</p>
+              <p class="footer-bio">Discover a world of chic and sustainable fashion at Smauge Fashion Hub. We curate the
+                latest trends and timeless pieces to inspire confidence and celebrate your unique style. Join us on a journey
+                where fashion meets passion, and every outfit tells a story. Welcome to Smauge - where style is more than
+                clothing; it's a statement.</p><br>
+      
+              <p style="font-size: 25px;">Contact</p><br>
+              <p class="con"><img class="footer-icon1" src={% static "home/images/icons/call.png" %} /> +977 9873748380</p>
+              <p class="con"><img class="footer-icon1" src={% static "home/images/icons/email.png" %} /> smauge@gmail.com</p>
+              <p class="con"><img class="footer-icon1" src={% static "home/images/icons/location.png" %} /> Chakrapath,
+                Kathmandu, Nepal</p>
+            </div>
+      
+            <div class="useful">
+              <p style="font-size: 25px;">Useful Links</p><br>
+              <p><a href="/">Home</a></p>
+              <p><a href="/about">About</a></p>
+              <p><a href="/blog">Blog</a></p>
+              <p><a href="#faq">FAQ</a></p>
+              <p><a href="/products">Products</a></p>
+              <p><a href="/contact">Contact Us</a></p>
+              <p><a href="/refund">Return Policy</a></p>
+            </div>
+      
+            <div class="social">
+              <p style="font-size: 25px;">Connect with us</p>
+              <a href="www.facebook.com"><img class="footer-icon" src={% static "home/images/icons/facebook.png" %} /></a>
+              <a href="www.instagram.com"><img class="footer-icon" src={% static "home/images/icons/instagram.png" %} /></a>
+              <a href="www.youtube.com"><img class="footer-icon" src={% static "home/images/icons/youtube.png" %} /></a>
+              <a href="www.tiktok.com"><img class="footer-icon" src={% static "home/images/icons/tik-tok.png" %} /></a>
+      
+              <p>
+              <p style="font-size: 25px;">Payment Methods</p>
+              <img class="footer-icon3" src={% static "home/images/icons/esewa.webp" %} />
+              </p>
+              <p style="font-size: 25px;">Happy Shopping</p>
+      
+            </div>
+          </div>
+      
+      
+        </footer>
+
+    <p class="copy">
+      <center>
+        Copyright &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        All rights reserved | Smauge Fashion Hub <a href="/PrivacyPolicy"><b>Privacy Policy</b></a>
+      </center>
+    </p><br>
+
+
+      <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src={% static "home.js"%}></script>
+
+    <script src={% static "product.js"%}></script>
+
+    <script src={% static "testimonial.js"%}></script>
+
+    <script src={% static "script.js"%}></script>
+  </body>
+</html>

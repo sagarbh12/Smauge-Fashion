@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Ranashree Sari Collection E-commerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            color: #DA0037;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .username {
+            font-weight: bold;
+            color: #DA0037;
+        }
+        .password {
+            font-weight: bold;
+            color: #DA0037;
+        }
+        .signature {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome <span class="username">{{ username }}</span>!</h2>
+    <p>
+        Thank you for signing up with our website. Your account has been successfully created.<br>
+        Please use the following credentials to log in:<br>
+        <span class="username">Username:</span> {{ username }}<br>
+        <span class="password">Password:</span> {{ password }}<br>
+    </p>
+    <p>Feel free to explore our website and enjoy your experience!</p>
+    <p>Best regards,</p>
+    <p class="signature">The Admin Team<br>
+    Ranashree Sari Collection</p>
+</body>
+</html>

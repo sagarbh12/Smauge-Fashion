@@ -1,0 +1,237 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Products</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="{% static 'home/dashboard.css' %}" />
+
+  <link rel="stylesheet" href="{% static 'home/adminn.css' %}" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div style="display:flex;justify-content: center;align-items: center;flex-direction: column;width: 100vw;">
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li {% if message.tags %} class="message {{ message.tags }}" {% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  <header id="header">
+    <nav class="navbar">
+
+      <div class="header-logo">
+
+        <div class="admin-dash">
+          <h1><img src="{% static 'home/images/icons/home.png' %}" class="home" alt="home" />Admin Dashboard</h1>
+        </div>
+
+        <div class="search">
+          <div class="icon"></div>
+          <div class="input">
+            <input type="text" name="input" id="mysearch" placeholder="Search" required autocomplete="off"
+              oninput="handleSearchInput()" />
+          </div>
+          <span class="clear" onclick="clearSearch()"></span>
+        </div>
+
+        <div>
+          <img src={% static "home/images/icons/basket.png" %} class="basket" alt="Cart" />
+        </div>
+
+        <div>
+          <img src={% static "home/images/icons/notification.png" %} class="notification" alt="Cart" />
+        </div>
+
+        <div class="profile-dropdown">
+          <div onclick="toggle()" class="profile-dropdown-btn">
+            <div class="profile-img" style="background-image: url('{% static "/home/images/people/per2.jpg" %}');">
+              <i class="fa-solid fa-circle"></i>
+            </div>
+
+            <span> Shree</span>
+            <i class="fa-solid fa-angle-down"></i>
+            </span>
+          </div>
+
+          <ul class="profile-dropdown-list">
+            <li class="profile-dropdown-list-item">
+              <a href="#">
+                <i class="fa-regular fa-user"></i>
+                Edit Profile
+              </a>
+            </li>
+
+            <li class="profile-dropdown-list-item">
+              <a href="#">
+                <i class="fa-regular fa-envelope"></i>
+                Inbox
+              </a>
+            </li>
+
+            <li class="profile-dropdown-list-item">
+              <a href="#">
+                <i class="fa-solid fa-chart-line"></i>
+                Analytics
+              </a>
+            </li>
+
+            <li class="profile-dropdown-list-item">
+              <a href="#">
+                <i class="fa-solid fa-sliders"></i>
+                Settings
+              </a>
+            </li>
+
+            <li class="profile-dropdown-list-item">
+              <a href="#">
+                <i class="fa-regular fa-circle-question"></i>
+                Help & Support
+              </a>
+            </li>
+            <hr />
+
+            <li class="profile-dropdown-list-item">
+              <a href="{% url 'index' %}">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Log out
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+
+  <input type="checkbox" id="check">
+  <label for="check" id="check-label">
+    <i class="fas fa-bars" id="check-btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+  </label>
+
+
+  <div class="sidebar">
+    <a class="logo" href="">Smauge</a>
+    <ul class="sidebar-nav">
+
+      <li><img src="{% static 'home/images/icons/dashboard.png' %}" class="side-icon" alt="dashboard" /><a
+        href="{% url 'adminn' %}">Dashboard</a></li>
+
+    <li><img src="{% static 'home/images/icons/group.png' %}" class="side-icon2" alt="users" /><a
+        href="{% url 'allusers' %}">Users</a>
+    </li>
+
+    <li><img src="{% static 'home/images/icons/product.png' %}" class="side-icon2" alt="product" /><a
+        href="{% url 'allproducts' %}">Products</a></li>
+
+    <li><img src="{% static 'home/images/icons/order.png' %}" class="side-icon2" alt="order" /><a
+        href="{% url 'allorders' %}">Orders</a></li>
+
+    <li><img src="{% static 'home/images/icons/review.png' %}" class="side-icon2" alt="reviews" /><a
+        href="{% url 'settings' %}">Reviews</a></li>
+
+    <li><img src="{% static 'home/images/icons/transaction.png' %}" class="side-icon2" alt="transactions" /><a
+        href="{% url 'settings' %}">Transactions</a></li>
+
+    <li><img src="{% static 'home/images/icons/settings.png' %}" class="side-icon2" alt="setting" /><a
+        href="{% url 'settings' %}">Settings</a></li>
+
+    <br>
+    <li><img src="{% static 'home/images/icons/logout.png' %}" class="side-icon2" alt="logout" /><a
+        href="{% url 'index' %}">Log Out</a></li>
+    </ul>
+  </div>
+
+
+
+  <section class="section">
+    <div class="send-data">
+      <h2>Edit Product</h2>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="id_name">Jacket Name:</label><br>
+        <input type="text" id="id_name" name="Jacket_Name" value="{{ product.Jacket_Name }}" required><br><br>
+
+        <label for="id_description">Description:</label><br>
+        <textarea id="id_description" name="Description" rows="2" cols="40" required>{{ product.Description }}</textarea><br><br>
+
+        <label for="id_price">Price:</label><br>
+        <input type="text" id="id_price" name="Price" value="{{ product.Price }}" required><br><br>
+
+        <label for="id_image">Image:</label><br>
+        <input type="file" id="id_image" name="Image" accept="image/*"><br><br>
+        <!-- <img src="{{ product.Image.url }}" class="backend-image" alt="{{ product.Jacket_Name }}"><br><br> -->
+
+        <button type="submit" class="add-product">Update</button>
+    </form>
+    </div>
+
+
+    <div class="header_fixed">
+      <table>
+        <thead>
+          <tr>
+            <th>S.N.</th>
+            <th>Jacket Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Images</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in products %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ product.Jacket_Name }}</td>
+            <td>{{ product.Description }}</td>
+            <td>{{ product.Price }}</td>
+            <td><img src="{{ product.Image.url }}" class="backend-image" alt="{{ product.Jacket_Name }}"></td>
+            <td><a href="#" onclick="editProduct('{{ product.id }}')"><i class="fas fa-edit"></i></a>
+              <a href="#" onclick="deleteProduct('{{ product.id }}')"><i class="fas fa-trash"></i></a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+  <br><br><br>
+  <p class="copy">
+      <center>
+        Copyright &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        All rights reserved | Smauge Fashion Hub
+      </center>
+    </p><br>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src={% static "AdminDashboard/script.js" %}></script>
+
+
+</body>
+
+</html>

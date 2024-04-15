@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <link rel="stylesheet" href="{% static 'home/login.css' %}">
+
+</head>
+<body>
+    
+    <div class="form-wrapper">
+        <img class="login2-img" src="{% static 'home/images/login2.webp' %}" alt="icon"/>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="message {{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
+        <form class="form-cover" method="post">    <!-- ### Form Start ### -->
+            {% csrf_token %}
+            <!-- {{ form.as_p }} -->
+
+            <div class="signup"> <b>Register Your Account 👏 </b></div>
+
+
+        <div class="text-field">
+            <diV>
+                <label for="username"><br>
+                    <div class="text-icon">
+                        <div><img class="icon" src="{% static 'home/images/icons/user.png' %}" alt="username-icon"/></div>
+                        <div><input type="username" id="username" name="username" autocomplete="off" placeholder="Username" value="{{username}}" required></div>
+                    </div>
+                </label>
+            </div>
+            
+            <diV>
+                <label for="fullname"><br>
+                    <div class="text-icon">
+                        <div><img class="icon" src="{% static 'home/images/icons/user.png' %}" alt="fullname-icon"/></div>
+                        <div><input type="fullname" id="fullname" name="fullname" autocomplete="off" placeholder="Fullname" value="{{fullname}}" required></div>
+                    </div>
+                </label>
+            </div>
+
+            <diV>
+                <label for="email"><br>
+                    <div class="text-icon">
+                        <div><img class="icon" src="{% static 'home/images/icons/email.png' %}" alt="email-icon"/></div>
+                        <div><input type="email" id="email" name="email" autocomplete="off" placeholder="Email" value="{{email}}"></div>
+                    </div>
+                </label>
+            </div>
+
+            <diV>
+                <label for="contact"><br>
+                    <div class="text-icon">
+                        <div><img class="icon" src="{% static 'home/images/icons/user.png' %}" alt="fullname-icon"/></div>
+                        <div><input type="tel" id="contact" name="contact" autocomplete="off" placeholder="Contact" value="{{contact}}" required></div>
+                    </div>
+                </label>
+            </div>
+
+            <div>
+                <label for="password"><br>
+                    <div class="text-icon">   
+                        <div><img class="icon" src="{% static 'home/images/icons/padlock.png' %}" alt="key-icon"/></div>
+                        <div><input type="password" id="password" name="pass1" autocomplete="off" placeholder="Password" value="{{pass1}}" required></div>
+                    </div> 
+                </label>
+            </div>
+
+            <div>
+                <label for="password"><br>
+                    <div class="text-icon">   
+                        <div><img class="icon" src="{% static 'home/images/icons/padlock.png' %}" alt="key-icon"/></div>
+                        <div><input type="password" id="password" name="pass2" autocomplete="off" placeholder="Re-Password" value="{{pass2}}" required></div>
+                    </div> 
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="submit-btn"> Register </button>
+        <div class="login-last"> 
+            <div class="create"> Go back to Log in? <a href="/login" style="text-decoration: none; font-size: 17px;"> <b>LOGIN</b> </a> </div>
+        </div>
+
+         </form>    <!-- ### Form End ### -->
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

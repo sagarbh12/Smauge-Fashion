@@ -1,0 +1,223 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Privacy Policy </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        .same {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .whole-about {
+            width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+</head>
+
+<body>
+
+    <header id="header">
+        <nav class="navbar">
+            <a class="logo" href="#logo">Smauge</a>
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+
+                <!--### The dropdown container ###-->
+                <div class="dropdown">
+                    <li>
+                        <p class="dropbtn">Pages <i class="fas fa-caret-down"></i></p>
+                    </li>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/faq">FAQ</a></li>
+                            <li><a href="/refund">Refund</a></li>
+                            <li><a href="/products">Products</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <li><a href="/testimonial">Testimonial</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+
+            <div class="header-logo">
+
+                <div class="search">
+                    <div class="icon"></div>
+                    <div class="input">
+                        <input type="text" name="input" id="mysearch" placeholder="Search" required autocomplete="off"
+                            oninput="handleSearchInput()" />
+                    </div>
+                    <span class="clear" onclick="clearSearch()"></span>
+                </div>
+
+                <div>
+                    <a href="{% url 'login' %}"><img src={% static 'home/images/icons/user-profile.png' %}
+                            class="user-logo" alt="user" /></a>
+                </div>
+
+                <div>
+                    <img src={% static "home/images/icons/basket.png" %} class="basket" alt="Cart" />
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <br><br><br><br><br>
+    <div class="whole-about">
+
+        <h1 class="same">Privacy Policy</h1>
+
+        <h4 class="same">
+            Last updated:
+            <script> document.write(new Date().getFullYear()); </script>
+        </h4>
+        <p>
+            Welcome to Smauge Fashion Hub. This Privacy Policy describes how your personal information is collected,
+            used, and shared when you visit or make a purchase from our website.
+        </p>
+
+        <h3 class="same">
+            Information Collection And Use
+        </h3>
+        <p>
+            When you visit Smauge Fashion Hub, we automatically collect certain information about your device, including
+            information about your web browser, IP address, time zone, and some of the cookies that are installed on
+            your device. Additionally, as you browse the website, we collect information about the individual web pages
+            or products that you view, what websites or search terms referred you to the website, and information about
+            how you interact with the website.
+        </p>
+
+        <h3 class="same">
+            How We Use Your Information
+        </h3>
+        <p>
+            We use the information that we collect to improve and optimize your shopping experience on our website, and
+            to assess the success of our marketing and advertising campaigns. We may also use your information to
+            communicate with you about products, promotions, and offers.
+        </p>
+
+        <h3 class="same">
+            Sharing Your Personal Information
+        </h3>
+        <p>
+            We may share your personal information with third parties to help us use your personal information, as
+            described above. For example, we may use Shopify to power our online store—you can read more about how
+            Shopify uses your personal information here: [Insert Shopify Privacy Policy URL]. We may also use Google
+            Analytics to help us understand how our customers use the website—you can read more about how Google uses
+            your personal information here: [Insert Google Privacy Policy URL].
+        </p>
+
+        <h3 class="same">
+            Your Rights
+        </h3>
+        <p>
+            If you are a European resident, you have the right to access personal information we hold about you and to
+            ask that your personal information be corrected, updated, or deleted. If you would like to exercise this
+            right, please contact us using the contact information provided below.
+        </p>
+        <h3>
+            Changes
+            </h class="same">
+            <p>
+                We may update this privacy policy from time to time in order to reflect, for example, changes to our
+                practices or for other operational, legal, or regulatory reasons.
+            </p>
+
+            <h3 class="same">
+                Contact Us
+            </h3>
+            <p>
+                For more information about our privacy practices, if you have questions, or if you would like to make a
+                complaint, please contact us by e-mail at [Insert Email Address] or by mail using the details provided
+                below:
+            </p>
+    </div>
+
+    <br> <br>
+    <footer id="footer" role="contentinfo">
+        <div class="footer-wrapper">
+            <div class="con-container">
+                <p class="logo2">Smauge.</p>
+                <p class="footer-bio">Discover a world of chic and sustainable fashion at Smauge Fashion Hub. We curate
+                    the
+                    latest trends and timeless pieces to inspire confidence and celebrate your unique style. Join us on
+                    a journey
+                    where fashion meets passion, and every outfit tells a story. Welcome to Smauge - where style is more
+                    than
+                    clothing; it's a statement.</p><br>
+
+                <p style="font-size: 25px;">Contact</p><br>
+                <p class="con"><img class="footer-icon1" src={% static "home/images/icons/call.png" %} /> +977
+                    9873748380</p>
+                <p class="con"><img class="footer-icon1" src={% static "home/images/icons/email.png" %} />
+                    smauge@gmail.com</p>
+                <p class="con"><img class="footer-icon1" src={% static "home/images/icons/location.png" %} />
+                    Chakrapath,
+                    Kathmandu, Nepal</p>
+            </div>
+
+            <div class="useful">
+                <p style="font-size: 25px;">Useful Links</p><br>
+                <p><a href="/">Home</a></p>
+                <p><a href="/about">About</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="/faq">FAQ</a></p>
+                <p><a href="/products">Products</a></p>
+                <p><a href="/contact">Contact Us</a></p>
+                <p><a href="/refund">Return Policy</a></p>
+            </div>
+
+            <div class="social">
+                <p style="font-size: 25px;">Connect with us</p>
+                <a href="www.facebook.com"><img class="footer-icon" src={% static "home/images/icons/facebook.png"%} /></a>
+                <a href="www.instagram.com"><img class="footer-icon" src={% static "home/images/icons/instagram.png"%} /></a>
+                <a href="www.youtube.com"><img class="footer-icon" src={% static "home/images/icons/youtube.png"%} /></a>
+                <a href="www.tiktok.com"><img class="footer-icon" src={% static "home/images/icons/tik-tok.png"%} /></a>
+
+                <p>
+                <p style="font-size: 25px;">Payment Methods</p>
+                <img class="footer-icon3" src={% static "home/images/icons/esewa.webp" %} />
+                </p>
+                <p style="font-size: 25px;">Happy Shopping</p>
+
+            </div>
+        </div>
+
+
+    </footer>
+
+    <p class="copy">
+        <center>
+            Copyright &copy;
+            <script>
+                document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | Smauge Fashion Hub <a href="/PrivacyPolicy"><b>Privacy Policy</b></a>
+        </center>
+    </p><br>
+
+    <script src={% static "script.js" %}></script>
+
+</body>
+
+</html>

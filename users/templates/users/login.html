@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+
+    <link rel="stylesheet" href="{% static 'home/login.css' %}">
+
+
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <img class="login-img" src="{% static 'home/images/login.jpg' %}" alt="icon" />
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="message {{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <form class="form-cover" method="post">
+            {% csrf_token %}
+            <div class="signin"> Sign In 👏 </div>
+
+            <div class="text-field">
+                <diV>
+                    <label for="username">
+                        <div class="field-gap">Username:</div>
+                        <div class="text-icon">
+                            <div><img class="icon" src="{% static 'home/images/icons/user.png' %}"
+                                    alt="username-icon" /></div>
+                            <div>
+                                <input type="username" id="username" name="username" autocomplete="off"
+                                    placeholder="Enter your username" value="{{username}}"
+                                    title="Minimum 6 characters at least 1 Alphabet and 1 Number" required>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <br><br>
+                <div>
+                    <label for="password">
+                        <div class="field-gap">Password:</div>
+                        <div class="text-icon">
+                            <div><img class="icon" src="{% static 'home/images/icons/padlock.png' %}" alt="key-icon" />
+                            </div>
+                            <div>
+                                <input type="password" id="password" name="pass1" autocomplete="off"
+                                    placeholder="Enter your password" required>
+                                
+                                <button type="button" id="eye-btn" class="toggle-password"
+                                    onclick="togglePasswordVisibility()"
+                                    style="position: relative; left: -45px; top:6px; background-color: transparent; border: none;">
+                                    <img class="eye" src="{% static 'home/images/icons/seen2.png' %}" alt="eye-icon"
+                                        style="height:30px; width: auto;">
+                                </button>
+                            
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn"> Login </button>
+            <br>
+            <div class="login-last">
+                <div class="reset"> <a href="{%url 'forgot_password'%}">Reset Password</a> </div>
+                <div class="create"> Need an account? <a href="/signup" style="text-decoration: none; font-size: 19px;">
+                        <b>SIGNUP</b></a> </div>
+            </div>
+
+        </form>
+    </div>
+    <script src="script.js"></script>
+
+
+    <script>            ///### For Seen Password and Unseen Password (eye) ###
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var toggleButton = document.querySelector(".toggle-password img.eye");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleButton.src = "{% static 'home/images/icons/seen1.png' %}"; // Path to unseen eye icon
+            } else {
+                passwordInput.type = "password";
+                toggleButton.src = "{% static 'home/images/icons/seen2.png' %}"; // Path to seen eye icon
+            }
+        }
+    </script>
+</body>
+
+</html>

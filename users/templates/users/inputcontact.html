@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!---- Page CSS  -->
+    <!-- <link rel="stylesheet" href="{% static 'authentication/styles/ask-forgot-reset.css' %}"> -->
+    
+
+</head>
+
+
+
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="form-container">
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="message {{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                <h3 class="fw-bold">To continue:</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="contact" class="form-label">Please enter your contact number</label>
+                            <input type="tel" name="contact_number" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
